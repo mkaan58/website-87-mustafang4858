@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>The Golden Hearth - Warm & Inviting Traditional Bakery</title>
+    <meta name="description" content="The Golden Hearth: Where every bite tells a story of warmth & tradition. High-quality, homemade baked goods and cozy atmosphere.">
+    <meta name="keywords" content="bakery, homemade, traditional, cakes, pastries, bread, desserts, local, cozy, food, artisan">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init("PFATyVVqB6dfozezc");
+        } else {
+            console.warn("EmailJS script not loaded or initialized.");
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        /* 🧬 SCIENTIFICALLY CALCULATED COLOR SYSTEM */
+        :root {
+          /* Primary Color System */
+          --color-primary: #eede2b;
+          --color-secondary: #a0ee2a;
+          --color-accent: #2a3aee;
+          
+          /* Background System */
+          --color-bg: #0f172a; /* Deep, rich chocolate brown */
+          --color-card-bg: #1e293b; /* Slightly lighter, warm brown for cards, containers, input fields */
+          
+          /* Text System */
+          --color-text-primary: #f8fafc; /* Soft off-white/light cream for main body text, navigation links, and primary content on dark backgrounds */
+          --color-text-secondary: #b0c6dd;
+          --color-text-muted: #6993be;
+          
+          /* Border System */
+          --color-border: #475569;
+          --color-border-hover: #64748b;
+          
+          /* Interactive States */
+          --color-primary-hover: #f1e55a;
+          --color-secondary-hover: #b5f159;
+          
+          /* Status Colors */
+          --color-success: #10b981;
+          --color-warning: #f59e0b;
+          --color-error: #ef4444;
+          --color-info: #3b82f6;
+          
+          /* Design System */
+          --border-radius: 13px;
+          --font-heading: 'Playfair Display', serif;
+          --font-body: 'Inter', sans-serif;
+        }
+
+        /* 🎯 GUARANTEED VISIBILITY BASE STYLES */
+        * {
+          box-sizing: border-box;
+          transition: all 0.3s ease; /* Maintain existing transition, apply more specific ones where needed */
+        }
+
+        body {
+          background-color: var(--color-bg) !important;
+          color: var(--color-text-primary) !important;
+          font-family: var(--font-body) !important;
+          line-height: 1.6 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          scroll-behavior: smooth; /* From base template */
+          scroll-padding-top: 80px; /* From base template */
+          overflow-x: hidden !important; /* Critical for Typed.js */
+          max-width: 100vw !important; /* Critical for Typed.js */
+        }
+
+        /* Override existing Tailwind colors for dark mode to ensure consistency */
+        .font-heading {
+            font-family: var(--font-heading) !important;
+        }
+        
+        .font-body {
+            font-family: var(--font-body) !important;
+        }
+
+        /* 🔴 CRITICAL: BUTTON SYSTEM (ZERO TOLERANCE FOR INVISIBLE BUTTONS) */
+        .btn-primary {
+          background-color: var(--color-primary) !important;
+          color: var(--color-bg) !important; /* Text color for primary button, contrasting with primary */
+          border: 2px solid var(--color-primary) !important;
+          font-weight: 600 !important;
+          padding: 12px 24px !important;
+          border-radius: var(--border-radius) !important;
+          transition: all 0.2s ease !important;
+          text-decoration: none !important;
+          display: inline-block !important;
+          cursor: pointer !important;
+          font-size: 16px !important;
+          min-height: 44px !important;
+          min-width: 44px !important;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important; /* Initial shadow for depth */
+        }
+        
+        .btn-primary:hover {
+          background-color: var(--color-primary-hover) !important;
+          border-color: var(--color-primary-hover) !important;
+          color: var(--color-bg) !important;
+          transform: translateY(-2px) !important;
+          box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+        }
+        
+        .btn-secondary { /* For the "Explore Our Menu" button in Hero */
+          background-color: transparent !important;
+          color: var(--color-primary) !important; /* Text color is primary yellow */
+          border: 2px solid var(--color-primary) !important; /* Border is primary yellow */
+          font-weight: 600 !important;
+          padding: 12px 24px !important;
+          border-radius: var(--border-radius) !important;
+          transition: all 0.2s ease !important;
+          text-decoration: none !important;
+          display: inline-block !important;
+          cursor: pointer !important;
+          font-size: 16px !important;
+          min-height: 44px !important;
+          min-width: 44px !important;
+        }
+        
+        .btn-secondary:hover {
+          background-color: var(--color-primary) !important;
+          color: var(--color-bg) !important; /* Text color becomes dark brown on hover */
+          border-color: var(--color-primary) !important;
+        }
+        
+        /* 🔴 CRITICAL: NAVIGATION SYSTEM */
+        .navbar {
+          background-color: transparent !important; /* Initially transparent */
+          border-bottom: none !important; /* Initially no border */
+          backdrop-filter: blur(0px) !important; /* Initially no blur */
+          padding: 16px 0 !important;
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          z-index: 1000 !important;
+          transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-bottom 0.3s ease !important;
+        }
+        
+        .navbar.scrolled {
+          background-color: var(--color-card-bg) !important; /* Becomes opaque */
+          backdrop-filter: blur(10px) !important;
+          border-bottom: 1px solid var(--color-border) !important;
+        }
+        
+        .navbar-brand {
+          color: var(--color-primary) !important; /* Logo color */
+          font-weight: 700 !important;
+          font-family: var(--font-heading) !important;
+          font-size: 24px !important;
+          text-decoration: none !important;
+        }
+        
+        .navbar-nav .nav-link {
+          color: var(--color-text-primary) !important; /* Initially white text */
+          font-weight: 500 !important;
+          padding: 8px 16px !important;
+          border-radius: calc(var(--border-radius) / 2) !important;
+          transition: all 0.2s ease !important;
+          text-decoration: none !important;
+          display: block !important;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active { /* Active link color */
+          color: var(--color-primary) !important;
+        }
+        
+        /* 🔴 CRITICAL: FORM SYSTEM */
+        .form-control {
+          background-color: var(--color-card-bg) !important; /* Lighter brown for inputs */
+          border: 2px solid var(--color-border) !important;
+          color: var(--color-text-primary) !important;
+          border-radius: var(--border-radius) !important; /* Apply 13px radius */
+          padding: 12px 16px !important;
+          font-size: 16px !important;
+          width: 100% !important;
+          transition: all 0.2s ease !important;
+        }
+        
+        .form-control:focus {
+          border-color: var(--color-primary) !important;
+          box-shadow: 0 0 0 3px rgba(238, 222, 43, 0.2) !important; /* Primary color subtle shadow */
+          outline: none !important;
+        }
+        
+        .form-control::placeholder {
+          color: var(--color-text-muted) !important;
+          opacity: 1 !important;
+        }
+        
+        .form-label {
+          color: var(--color-text-primary) !important;
+          font-weight: 600 !important;
+          margin-bottom: 8px !important;
+          display: block !important;
+        }
+        
+        /* 🔴 CRITICAL: CARD SYSTEM */
+        .card {
+          background-color: var(--color-card-bg) !important;
+          border: 1px solid var(--color-border) !important;
+          color: var(--color-text-primary) !important;
+          border-radius: var(--border-radius) !important; /* Apply 13px radius */
+          transition: all 0.3s ease !important;
+          overflow: hidden !important;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Soft shadow */
+        }
+        
+        .card:hover {
+          border-color: var(--color-border-hover) !important;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.1) !important; /* Lifted shadow */
+          transform: translateY(-4px) !important;
+        }
+        
+        .card-title {
+          color: var(--color-text-primary) !important;
+          font-family: var(--font-heading) !important;
+          font-weight: 700 !important;
+          margin-bottom: 12px !important;
+        }
+        
+        .card-text {
+          color: var(--color-text-secondary) !important;
+          line-height: 1.6 !important;
+        }
+        
+        /* 🔴 CRITICAL: ICON SYSTEM */
+        .icon {
+          color: var(--color-primary) !important;
+          transition: color 0.2s ease !important;
+        }
+        
+        .icon:hover {
+          color: var(--color-primary-hover) !important;
+        }
+        
+        /* Social Media Icons (specific for footer/contact) */
+        .social-icon-btn {
+            background-color: var(--color-card-bg) !important; /* Using card background for icons too */
+            color: var(--color-text-secondary) !important;
+            border: 1px solid var(--color-border) !important;
+            transition: all 0.2s ease !important;
+            border-radius: 50% !important; /* For circular icons */
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 44px !important; /* Minimum touch target */
+            height: 44px !important; /* Minimum touch target */
+        }
+        .social-icon-btn:hover {
+            background-color: var(--color-primary) !important;
+            color: var(--color-bg) !important; /* Dark text on primary background */
+            border-color: var(--color-primary) !important;
+            transform: scale(1.1) !important;
+        }
+        
+        /* 🔴 CRITICAL: LINK SYSTEM */
+        a {
+          color: var(--color-primary) !important;
+          text-decoration: none !important; /* Remove default underline from base template */
+          text-underline-offset: 2px !important;
+          transition: all 0.2s ease !important;
+        }
+        
+        a:hover {
+          color: var(--color-primary-hover) !important;
+          text-decoration: underline !important; /* Add underline on hover */
+        }
+        
+        /* 🔴 CRITICAL: HEADING HIERARCHY */
+        h1, h2, h3, h4, h5, h6 {
+          color: var(--color-text-primary) !important;
+          font-family: var(--font-heading) !important;
+          font-weight: 700 !important;
+          line-height: 1.2 !important;
+          margin-bottom: 16px !important;
+        }
+        
+        h1 { font-size: 4.5rem !important; } /* Desktop 72px */
+        h2 { font-size: 3rem !important; }   /* Desktop 48px */
+        h3 { font-size: 2rem !important; }   /* Desktop 32px */
+        h4 { font-size: 1.5rem !important; }
+        h5 { font-size: 1.25rem !important; }
+        h6 { font-size: 1rem !important; }
+        
+        /* 🔴 CRITICAL: RESPONSIVE TEXT SCALING */
+        @media (max-width: 1024px) { /* Tablet breakpoint for headings */
+            h1 { font-size: 3rem !important; } /* Tablet 48px */
+            h2 { font-size: 2rem !important; }   /* Tablet 32px */
+            h3 { font-size: 1.5rem !important; } /* Tablet 24px */
+            h4 { font-size: 1.25rem !important; }
+        }
+        @media (max-width: 768px) { /* Mobile breakpoint for headings */
+            h1 { font-size: 2.5rem !important; } /* Mobile 40px */
+            h2 { font-size: 1.75rem !important; } /* Mobile 28px */
+            h3 { font-size: 1.25rem !important; } /* Mobile 20px */
+            h4 { font-size: 1.1rem !important; }
+        }
+        
+        /* 🔴 CRITICAL: UTILITY CLASSES */
+        .text-primary-color { color: var(--color-primary) !important; } /* For headings/highlights */
+        .text-text-primary { color: var(--color-text-primary) !important; }
+        .text-text-secondary { color: var(--color-text-secondary) !important; }
+        .text-text-muted { color: var(--color-text-muted) !important; }
+        .bg-bg { background-color: var(--color-bg) !important; }
+        .bg-card-bg { background-color: var(--color-card-bg) !important; }
+        .border-border { border-color: var(--color-border) !important; }
+        
+        /* 🔴 CRITICAL: FOCUS STATES FOR ACCESSIBILITY */
+        button:focus,
+        input:focus,
+        textarea:focus,
+        select:focus,
+        a:focus {
+          outline: 2px solid var(--color-primary) !important;
+          outline-offset: 2px !important;
+        }
+        
+        /* 🔴 CRITICAL: HOVER STATES FOR INTERACTIVE ELEMENTS */
+        button,
+        .btn,
+        [role="button"] {
+          cursor: pointer !important;
+          transition: all 0.2s ease !important;
+        }
+        
+        button:hover,
+        .btn:hover,
+        [role="button"]:hover {
+          transform: translateY(-1px) !important;
+        }
+        
+        /* 🔴 CRITICAL: UNIFORM CARD HEIGHT SYSTEM */
+        .card-container {
+          display: flex !important;
+          align-items: stretch !important;
+        }
+        
+        .card {
+          height: 100% !important;
+          display: flex !important;
+          flex-direction: column !important;
+        }
+        
+        .card-body {
+          flex: 1 !important;
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: space-between !important;
+        }
+        
+        /* Grid containers for equal heights */
+        .menu-grid, .gallery-grid, .testimonials-grid { /* Updated names */
+          display: grid !important;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+          gap: 24px !important; /* Consistent spacing */
+          align-items: stretch !important;
+        }
+        
+        @media (max-width: 768px) {
+          .menu-grid, .gallery-grid, .testimonials-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        
+        /* 🔴 CRITICAL: MOBILE NAVIGATION FIX */
+        .mobile-menu {
+          position: fixed !important;
+          top: 64px !important; /* Adjust based on navbar height */
+          right: 0 !important;
+          height: calc(100vh - 64px) !important;
+          width: 280px !important;
+          background-color: var(--color-card-bg) !important; /* Use card background for mobile menu */
+          border-left: 1px solid var(--color-border) !important;
+          transform: translateX(100%) !important;
+          transition: transform 0.3s ease !important;
+          z-index: 999 !important;
+          overflow-y: auto !important;
+          padding-top: 20px; /* Add some top padding */
+        }
+        
+        .mobile-menu.active {
+          transform: translateX(0) !important;
+        }
+        
+        .hamburger {
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: space-around !important;
+          width: 24px !important;
+          height: 24px !important;
+          background: transparent !important;
+          border: none !important;
+          cursor: pointer !important;
+          padding: 0 !important;
+          z-index: 1001 !important; /* Ensure hamburger is on top */
+        }
+        
+        .hamburger span {
+          display: block !important;
+          width: 100% !important;
+          height: 2px !important;
+          background-color: var(--color-text-primary) !important;
+          transition: all 0.3s ease !important;
+          transform-origin: center !important;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px) !important;
+        }
+        
+        .hamburger.active span:nth-child(2) {
+          opacity: 0 !important;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px) !important;
+        }
+        
+        /* 🔴 CRITICAL: MOBILE TOUCH TARGETS */
+        @media (max-width: 768px) {
+          .btn-primary,
+          .btn-secondary {
+            min-height: 48px !important;
+            min-width: 48px !important;
+            padding: 16px 24px !important;
+            font-size: 16px !important;
+          }
+          
+          .nav-link {
+            padding: 16px 20px !important;
+            font-size: 16px !important;
+            display: block !important;
+            border-bottom: 1px solid var(--color-border) !important;
+            color: var(--color-text-primary) !important; /* Ensure mobile links are visible */
+          }
+          .nav-link:hover {
+              background-color: var(--color-bg) !important; /* Lighter background for hover in mobile menu */
+          }
+          
+          .card {
+            margin-bottom: 20px !important;
+          }
+        }
+        
+        /* 🔴 CRITICAL: MOBILE FORM FIXES */
+        @media (max-width: 768px) {
+          .form-control {
+            font-size: 16px !important;
+            padding: 16px !important;
+            min-height: 48px !important;
+          }
+          
+          textarea.form-control {
+            min-height: 120px !important;
+          }
+        }
+        
+        /* Swiper Styling */
+        .swiper {
+          padding: 20px 0 60px 0 !important;
+          overflow: visible !important;
+        }
+        
+        .swiper-pagination {
+          bottom: 10px !important;
+          left: 50% !important;
+          transform: translateX(-50%) !important;
+        }
+        
+        .swiper-pagination-bullet {
+          background-color: var(--color-text-muted) !important;
+          opacity: 0.5 !important;
+          width: 10px !important;
+          height: 10px !important;
+          margin: 0 4px !important;
+          transition: all 0.3s ease !important;
+        }
+        
+        .swiper-pagination-bullet-active {
+          background-color: var(--color-primary) !important;
+          opacity: 1 !important;
+          transform: scale(1.3) !important;
+        }
+        
+        /* Mobile Navigation Buttons */
+        @media (min-width: 768px) {
+          .swiper-button-next,
+          .swiper-button-prev {
+            color: var(--color-primary) !important;
+            background-color: var(--color-bg) !important; /* Use main background for nav buttons */
+            width: 44px !important;
+            height: 44px !important;
+            border-radius: 50% !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+            transition: all 0.3s ease !important;
+            border: 2px solid var(--color-border) !important;
+          }
+        
+          .swiper-button-next:hover,
+          .swiper-button-prev:hover {
+            background-color: var(--color-primary) !important;
+            color: var(--color-bg) !important;
+            transform: scale(1.1) !important;
+            border-color: var(--color-primary) !important;
+          }
+        
+          .swiper-button-next:after,
+          .swiper-button-prev:after {
+            font-size: 14px !important;
+            font-weight: bold !important;
+          }
+        }
+        
+        /* Hide navigation buttons on mobile */
+        @media (max-width: 767px) {
+          .swiper-button-next,
+          .swiper-button-prev {
+            display: none !important;
+          }
+          
+          .swiper-pagination {
+            bottom: 20px !important;
+          }
+        }
+        
+        /* Typed.js Styling */
+        .typed-container {
+          min-width: 200px !important;
+          overflow: hidden !important;
+          white-space: nowrap !important;
+        }
+        
+        .typed-element {
+          color: var(--color-primary) !important;
+          font-weight: 700 !important;
+          position: relative !important;
+        }
+        
+        .typed-cursor {
+          color: var(--color-primary) !important;
+          font-weight: 300 !important;
+          animation: blink 1s infinite !important;
+        }
+        
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+        
+        /* Particles.js Styling */
+        .particles-container {
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          z-index: -1 !important;
+          pointer-events: none !important;
+        }
+        
+        #particles-js {
+          position: absolute !important;
+          width: 100% !important;
+          height: 100% !important;
+          background-color: transparent !important;
+        }
+        
+        /* CRITICAL: Mobile optimization - disable particles */
+        @media (max-width: 768px) {
+          .particles-container {
+            display: none !important;
+          }
+        }
+        
+        /* CRITICAL: Reduced motion accessibility */
+        @media (prefers-reduced-motion: reduce) {
+          .particles-container {
+            display: none !important;
+          }
+        }
+        
+        /* CRITICAL: Performance optimization for low-end devices */
+        @media (max-width: 1024px) and (max-height: 768px) {
+          .particles-container {
+            display: none !important;
+          }
+        }
+        
+        /* Specific styles for gallery images */
+        .gallery-item {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius) !important;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border-radius: var(--border-radius) !important; /* Ensure image also gets radius */
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item::before {
+            content: '\f00e'; /* Magnifying glass icon from Font Awesome */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: var(--color-text-primary);
+            background: rgba(0,0,0,0.4);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+        
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+        
+        .hero-background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2; /* Below particles */
+            filter: brightness(0.7) blur(2px); /* Subtle dark overlay and blur */
+            transform: scale(1.0); /* For initial zoom-in effect */
+            transition: transform 2s ease-out; /* Smooth zoom-in on load */
+        }
+        .hero-section.loaded .hero-background-image {
+            transform: scale(1.05); /* Gentle zoom effect */
+        }
+    </style>
+</head>
+<body class="font-body bg-bg text-text-primary" x-data="{ 
+    mobileMenuOpen: false, 
+    showBackToTop: false
+}" x-init="
+    window.addEventListener('scroll', () => {
+        showBackToTop = window.scrollY > 300;
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Add 'loaded' class to hero for background animation
+    document.querySelector('.hero-section').classList.add('loaded');
+">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="navbar-brand">
+                        The Golden Hearth
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8 navbar-nav">
+                        <a href="#home" class="nav-link text-text-primary active">Home</a>
+                        <a href="#about" class="nav-link text-text-primary">About Us</a>
+                        <a href="#menu" class="nav-link text-text-primary">Our Menu</a>
+                        <a href="#gallery" class="nav-link text-text-primary">Gallery</a>
+                        <a href="#testimonials" class="nav-link text-text-primary">Testimonials</a>
+                        <a href="#contact" class="nav-link text-text-primary">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="hamburger p-2" :class="{ 'active': mobileMenuOpen }" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu md:hidden" :class="{ 'active': mobileMenuOpen }">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" @click="mobileMenuOpen = false" class="nav-link">Home</a>
+                <a href="#about" @click="mobileMenuOpen = false" class="nav-link">About Us</a>
+                <a href="#menu" @click="mobileMenuOpen = false" class="nav-link">Our Menu</a>
+                <a href="#gallery" @click="mobileMenuOpen = false" class="nav-link">Gallery</a>
+                <a href="#testimonials" @click="mobileMenuOpen = false" class="nav-link">Testimonials</a>
+                <a href="#contact" @click="mobileMenuOpen = false" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center justify-center relative overflow-hidden text-center py-20">
+        <div id="particles-js" class="particles-container"></div>
+        <img src="https://images.unsplash.com/photo-1458712197423-adcdc2a426ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHwyfHwqKlJlZmluZWQlMjBRdWVyeSUzQSQqJTIwV2FybSUyMGludml0aW5nJTIwYXJ0aXNhbiUyMGJha2VyeSUyMGRpc3BsYXklMjBhc3NvcnRtZW50fGVufDB8MHx8fDE3NDkxNjI5Njh8MA&ixlib=rb-4.1.0&q=80&w=1200&h=600&fit=crop&crop=center" 
+             alt="Assortment of freshly baked goods and pastries" 
+             class="hero-background-image"
+             loading="eager"
+             onerror="this.alt='Image failed to load - using real Unsplash photo'">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="font-heading text-primary-color font-bold mb-4">
+                    The Golden Hearth
+                </h1>
+                <h2 class="font-body text-text-primary font-normal mb-8 max-w-3xl mx-auto typed-container">
+                    Where Every Bite Tells a Story of <span id="typed-text" class="typed-element"></span>
+                </h2>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#menu" class="btn-primary">
+                        <i class="fas fa-cookie-bite mr-2"></i>
+                        Explore Our Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-card-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-heading text-text-primary font-bold mb-4">About Us</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Handcrafted with Love, Baked with Passion, Served with Warmth.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1458712197423-adcdc2a426ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHwzfHxiYWtlcnklMjBhYm91dHxlbnwwfHx8fDE3NDkxNjI5OTh8MA&ixlib=rb-4.1.0&q=80&w=1080" 
+                         alt="Cozy bakery interior" 
+                         class="rounded-[var(--border-radius)] shadow-2xl w-full max-w-md mx-auto card hover-lift"
+                         loading="lazy"
+                         onerror="this.alt='Image failed to load - using real Unsplash photo'">
+                </div>
+                
+                <div data-aos="fade-left">
+                    <h3 class="font-heading text-text-primary font-bold mb-6">Our Philosophy</h3>
+                    <p class="text-text-secondary mb-6 leading-relaxed">
+                        At The Golden Hearth, we believe in the magic of traditional baking. Every loaf of bread, every pastry, 
+                        and every cake is made from scratch daily, using only the finest, locally sourced ingredients. 
+                        We pour our heart into time-honored recipes, ensuring each bite brings a comforting taste of home and
+                        a joyful memory. Our bakery is more than just a place to buy sweets; it's a warm, inviting haven
+                        where community gathers and stories are shared over a perfect cup of coffee and a fresh treat.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-bg text-primary-color rounded-full text-sm font-semibold border-border border">Handcrafted with Love</span>
+                        <span class="px-3 py-1 bg-bg text-primary-color rounded-full text-sm font-semibold border-border border">Traditional Recipes</span>
+                        <span class="px-3 py-1 bg-bg text-primary-color rounded-full text-sm font-semibold border-border border">Freshly Baked Daily</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu/Featured Items Section (Swiper) -->
+    <section id="menu" class="py-20 bg-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-heading text-text-primary font-bold mb-4">Our Menu Highlights</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    A curated selection of our most beloved and freshly baked delights.
+                </p>
+            </div>
+            
+            <div class="swiper portfolio-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Menu Item 1: Croissant -->
+                    <div class="swiper-slide">
+                        <div class="card p-6 card-body" data-aos="fade-up" data-aos-delay="100">
+                            <img src="https://images.unsplash.com/photo-1521471109507-43d61bb345dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHwyfHxjbG9zZSUyMHVwJTIwZ29sZGVuJTIwY3JvaXNzYW50JTJDJTIwZnJlc2hseSUyMGJha2VkJTIwcnVzdGljJTIwYnJlYWQlMjAlMjhyZXByZXNlbnRhdGl2ZSUyMHRodW1ibmFpbCUyMGZvciUyMG1lbnUlMjl8ZW58MHx8fHwxNzQ5MTYyOTk5fDA&ixlib=rb-4.1.0&q=80&w=400&h=300&fit=crop&crop=center" 
+                                 alt="Golden Croissant" 
+                                 class="w-full h-48 object-cover rounded-[var(--border-radius)] mb-4"
+                                 loading="lazy"
+                                 onerror="this.alt='Image failed to load - using real Unsplash photo'">
+                            <h3 class="font-heading card-title">Golden Croissant</h3>
+                            <p class="card-text">Flaky, buttery, and perfectly golden – a timeless classic for your morning.</p>
+                            <span class="text-primary-color font-semibold mt-4 block">$3.50</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Item 2: Artisan Sourdough -->
+                    <div class="swiper-slide">
+                        <div class="card p-6 card-body" data-aos="fade-up" data-aos-delay="200">
+                            <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHw1fHxiYWtlcnklMjBnYWxsZXJ5fGVufDB8fHx8MTc0OTE2MzAzMnww&ixlib=rb-4.1.0&q=80&w=400&h=300&fit=crop&crop=center" 
+                                 alt="Artisan Sourdough" 
+                                 class="w-full h-48 object-cover rounded-[var(--border-radius)] mb-4"
+                                 loading="lazy"
+                                 onerror="this.alt='Image failed to load - using real Unsplash photo'">
+                            <h3 class="font-heading card-title">Artisan Sourdough</h3>
+                            <p class="card-text">Our signature bread, slow-fermented for a rich flavor and perfect crust.</p>
+                            <span class="text-primary-color font-semibold mt-4 block">$6.99</span>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 3: Berry Cheesecake -->
+                    <div class="swiper-slide">
+                        <div class="card p-6 card-body" data-aos="fade-up" data-aos-delay="300">
+                            <img src="https://images.unsplash.com/photo-1606658635765-9eb667a8f063?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHwzfHwqKlJlZmluZWQlMjBRdWVyeSUzQSoqJTIwV2FybSUyMHN1bmxpdCUyMGJha2VyeSUyMGZyZXNoJTIwcGFzdHJ5JTIwZGlzcGxheXxlbnwwfHx8fDE3NDkxNjMwNDZ8MA&ixlib=rb-4.1.0&q=80&w=400&h=300&fit=crop&crop=center" 
+                                 alt="Berry Cheesecake" 
+                                 class="w-full h-48 object-cover rounded-[var(--border-radius)] mb-4"
+                                 loading="lazy"
+                                 onerror="this.alt='Image failed to load - using real Unsplash photo'">
+                            <h3 class="font-heading card-title">Berry Cheesecake</h3>
+                            <p class="card-text">Creamy, dreamy cheesecake topped with seasonal fresh berries.</p>
+                            <span class="text-primary-color font-semibold mt-4 block">$5.75 / slice</span>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 4: Chocolate Chip Cookies -->
+                    <div class="swiper-slide">
+                        <div class="card p-6 card-body" data-aos="fade-up" data-aos-delay="400">
+                            <img src="https://images.unsplash.com/photo-1521471109507-43d61bb345dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHwyfHxjbG9zZSUyMHVwJTIwZ29sZGVuJTIwY3JvaXNzYW50JTJDJTIwZnJlc2hseSUyMGJha2VkJTIwcnVzdGljJTIwYnJlYWQlMjAlMjhyZXByZXNlbnRhdGl2ZSUyMHRodW1ibmFpbCUyMGZvciUyMG1lbnUlMjl8ZW58MHx8fHwxNzQ5MTYyOTk5fDA&ixlib=rb-4.1.0&q=80&w=400&h=300&fit=crop&crop=center" 
+                                 alt="Chocolate Chip Cookies" 
+                                 class="w-full h-48 object-cover rounded-[var(--border-radius)] mb-4"
+                                 loading="lazy"
+                                 onerror="this.alt='Image failed to load - using real Unsplash photo'">
+                            <h3 class="font-heading card-title">Chocolate Chip Cookies</h3>
+                            <p class="card-text">Warm, gooey, and packed with rich chocolate chips – simply irresistible.</p>
+                            <span class="text-primary-color font-semibold mt-4 block">$2.50 / each</span>
+                        </div>
+                    </div>
+
+                     <!-- Menu Item 5: Macarons -->
+                     <div class="swiper-slide">
+                        <div class="card p-6 card-body" data-aos="fade-up" data-aos-delay="500">
+                            <img src="https://images.unsplash.com/photo-1460380410874-537ecece3984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHwxN3x8VmibantCUyMEZyZW5jaCUyMG1hY2Fyb24lMjBweXJhbWlkJTIwZGVzc2VydCUyMGNvdW50ZXJ8ZW58MHx8fHwxNzQ5MTYzMDc2fDA&ixlib=rb-4.1.0&q=80&w=400&h=300&fit=crop&crop=center" 
+                                 alt="Colorful French Macarons" 
+                                 class="w-full h-48 object-cover rounded-[var(--border-radius)] mb-4"
+                                 loading="lazy"
+                                 onerror="this.alt='Image failed to load - using real Unsplash photo'">
+                            <h3 class="font-heading card-title">French Macarons</h3>
+                            <p class="card-text">Delicate, colorful, and bursting with delightful flavors. Perfect for a sweet gift.</p>
+                            <span class="text-primary-color font-semibold mt-4 block">$2.00 / each</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-heading text-text-primary font-bold mb-4">Our Visual Delights</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    A glimpse into the artistry and inviting atmosphere of our bakery.
+                </p>
+            </div>
+            
+            <div class="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <a href="https://images.unsplash.com/photo-1509365465985-25d11c17e812?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHw1fHxiYWtlcnklMjBnYWxsZXJ5fGVufDB8fHx8MTc0OTE2MzAzMnww&ixlib=rb-4.1.0&q=80&w=1080" class="glightbox gallery-item" data-aos="fade-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHw1fHxiYWtlcnklMjBnYWxsZXJ5fGVufDB8fHx8MTc0OTE2MzAzMnww&ixlib=rb-4.1.0&q=80&w=600&h=400&fit=crop&crop=center" 
+                         alt="Artisan bread display" 
+                         loading="lazy"
+                         onerror="this.alt='Image failed to load - using real Unsplash photo'">
+                </a>
+                <a href="https://images.unsplash.com/photo-1606658635765-9eb667a8f063?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHwzfHwqKlJlZmluZWQlMjBRdWVyeSUzQSoqJTIwV2FybSUyMHN1bmxpdCUyMGJha2VyeSUyMGZyZXNoJTIwcGFzdHJ5JTIwZGlzcGxheXxlbnwwfHx8fDE3NDkxNjMwNDZ8MA&ixlib=rb-4.1.0&q=80&w=1080" class="glightbox gallery-item" data-aos="fade-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1606658635765-9eb667a8f063?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHwzfHwqKlJlZmluZWQlMjBRdWVyeSUzQSoqJTIwV2FybSUyMHN1bmxpdCUyMGJha2VyeSUyMGZyZXNoJTIwcGFzdHJ5JTIwZGlzcGxheXxlbnwwfHx8fDE3NDkxNjMwNDZ8MA&ixlib=rb-4.1.0&q=80&w=600&h=400&fit=crop&crop=center" 
+                         alt="Variety of colorful pastries" 
+                         loading="lazy"
+                         onerror="this.alt='Image failed to load - using real Unsplash photo'">
+                </a>
+                <a href="https://images.unsplash.com/photo-1521471109507-43d61bb345dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHw1fHxHb2xkZW4lMjBhcnRpc2FuJTIwc291cmRvdWdoJTIwYnJlYWQlMjBydXN0aWMlMjBkaXNwbGF5fGVufDB8fHx8MTc0OTE2MzA1OXww&ixlib=rb-4.1.0&q=80&w=1080" class="glightbox gallery-item" data-aos="fade-in" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1521471109507-43d61bb345dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHw1fHxHb2xkZW4lMjBhcnRpc2FuJTIwc291cmRvdWdoJTIwYnJlYWQlMjBydXN0aWMlMjBkaXNwbGF5fGVufDB8fHx8MTc0OTE2MzA1OXww&ixlib=rb-4.1.0&q=80&w=600&h=400&fit=crop&crop=center" 
+                         alt="Freshly baked rustic bread" 
+                         loading="lazy"
+                         onerror="this.alt='Image failed to load - using real Unsplash photo'">
+                </a>
+                <a href="https://images.unsplash.com/photo-1460380410874-537ecece3984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHwxN3x8VmibantCUyMEZyZW5jaCUyMG1hY2Fyb24lMjBweXJhbWlkJTIwZGVzc2VydCUyMGNvdW50ZXJ8ZW58MHx8fHwxNzQ5MTYzMDc2fDA&ixlib=rb-4.1.0&q=80&w=1080" class="glightbox gallery-item" data-aos="fade-in" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1460380410874-537ecece3984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTkxMzh8MHwxfHNlYXJjaHwxN3x8VmibantCUyMEZyZW5jaCUyMG1hY2Fyb24lMjBweXJhbWlkJTIwZGVzc2VydCUyMGNvdW50ZXJ8ZW58MHx8fHwxNzQ5MTYzMDc2fDA&ixlib=rb-4.1.0&q=80&w=600&h=400&fit=crop&crop=center" 
+                         alt="Close-up of vibrant macarons" 
+                         loading="lazy"
+                         onerror="this.alt='Image failed to load - using real Unsplash photo'">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (Swiper) -->
+    <section id="testimonials" class="py-20 bg-card-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-heading text-text-primary font-bold mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Hear from those who've experienced the warmth and quality of The Golden Hearth.
+                </p>
+            </div>
+            
+            <div class="swiper testimonials-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="card p-8 text-center flex flex-col justify-between items-center card-body" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-quote-left text-primary-color text-3xl mb-4"></i>
+                            <p class="card-text italic mb-6">
+                                "The Golden Hearth is a true gem! Their sourdough bread is the best I've ever tasted, and their pastries are simply divine. It feels like stepping into a European bakery."
+                            </p>
+                            <div class="text-text-primary font-semibold">- Sarah M.</div>
+                            <div class="flex items-center justify-center mt-2">
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="card p-8 text-center flex flex-col justify-between items-center card-body" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-quote-left text-primary-color text-3xl mb-4"></i>
+                            <p class="card-text italic mb-6">
+                                "Such a cozy atmosphere and the aroma of fresh baking fills the air. Their coffee cakes are out of this world, and the staff are always so welcoming. Highly recommend!"
+                            </p>
+                            <div class="text-text-primary font-semibold">- John D.</div>
+                            <div class="flex items-center justify-center mt-2">
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star-half-alt text-primary-color text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="card p-8 text-center flex flex-col justify-between items-center card-body" data-aos="fade-up" data-aos-delay="300">
+                            <i class="fas fa-quote-left text-primary-color text-3xl mb-4"></i>
+                            <p class="card-text italic mb-6">
+                                "I ordered a custom birthday cake, and it was absolutely stunning and delicious! Everyone raved about it. This is my new go-to bakery for all occasions."
+                            </p>
+                            <div class="text-text-primary font-semibold">- Emily R.</div>
+                            <div class="flex items-center justify-center mt-2">
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="swiper-slide">
+                        <div class="card p-8 text-center flex flex-col justify-between items-center card-body" data-aos="fade-up" data-aos-delay="400">
+                            <i class="fas fa-quote-left text-primary-color text-3xl mb-4"></i>
+                            <p class="card-text italic mb-6">
+                                "The best croissants outside of Paris! I come here every weekend for my coffee and a pastry. It's truly a local treasure."
+                            </p>
+                            <div class="text-text-primary font-semibold">- Michael B.</div>
+                            <div class="flex items-center justify-center mt-2">
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                                <i class="fas fa-star text-primary-color text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section - EmailJS Playground yapısına uygun -->
+<section id="contact" class="py-20 bg-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="font-heading text-text-primary font-bold mb-4">Get In Touch</h2>
+            <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                Visit our cozy bakery or send us a message!
+            </p>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Contact Info -->
+            <div data-aos="fade-right">
+                <h3 class="font-heading text-text-primary font-bold mb-8">Bakery Details</h3>
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-card-bg rounded-[var(--border-radius)] flex items-center justify-center mr-4 border-border border">
+                            <i class="fas fa-envelope icon"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text-primary">Email</h4>
+                            <p class="text-text-secondary">info@goldenhearth.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-card-bg rounded-[var(--border-radius)] flex items-center justify-center mr-4 border-border border">
+                            <i class="fas fa-phone icon"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text-primary">Phone</h4>
+                            <p class="text-text-secondary">+1 (123) 456-7890</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-card-bg rounded-[var(--border-radius)] flex items-center justify-center mr-4 border-border border">
+                            <i class="fas fa-map-marker-alt icon"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text-primary">Address</h4>
+                            <p class="text-text-secondary">123 Bakery Lane, Sweetville, CA 90210</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Social Media -->
+                <div class="mt-8">
+                    <h4 class="font-semibold text-text-primary mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon-btn" aria-label="Our Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon-btn" aria-label="Our Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon-btn" aria-label="Our Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                    <div class="mt-8 overflow-hidden rounded-[var(--border-radius)] shadow-lg">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2505670845347!2d-122.4194156846816!3d37.77492977975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807f4a5f4c4b%3A0x6b7a5e8f4a5f4c4b!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1678888888888!5m2!1sen!2sus" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form - EmailJS Playground Compatible -->
+            <div data-aos="fade-left">
+                <div class="bg-card-bg p-8 rounded-[var(--border-radius)] shadow-lg">
+                    <h3 class="font-heading text-xl font-bold mb-6 text-text-primary">Send Us a Message</h3>
+                    
+                    <!-- EXACT EmailJS Form Structure -->
+                    <form id="emailjs-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="field">
+                                <label for="name" class="form-label">
+                                    <i class="fas fa-user mr-2 icon"></i>Name
+                                </label>
+                                <input 
+                                    type="text" 
+                                    name="name" 
+                                    id="name"
+                                    required
+                                    class="form-control"
+                                    placeholder="Your Name">
+                            </div>
+                            <div class="field">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope mr-2 icon"></i>Email
+                                </label>
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    id="email"
+                                    required
+                                    class="form-control"
+                                    placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="subject" class="form-label">
+                                <i class="fas fa-tag mr-2 icon"></i>Subject
+                            </label>
+                            <input 
+                                type="text" 
+                                name="subject" 
+                                id="subject"
+                                required
+                                class="form-control"
+                                placeholder="Order Inquiry / Feedback">
+                        </div>
+                        <div class="field">
+                            <label for="message" class="form-label">
+                                <i class="fas fa-comment mr-2 icon"></i>Message
+                            </label>
+                            <textarea 
+                                name="message" 
+                                id="message"
+                                required
+                                rows="5"
+                                class="form-control resize-none"
+                                placeholder="Tell us about your request or feedback..."></textarea>
+                        </div>
+                        
+                        <!-- Hidden field for recipient email - EmailJS playground style -->
+                        <div class="field hidden">
+                            <input type="hidden" name="to_email" id="to_email" value="mustafang4858@gmail.com">
+                        </div>
+                        
+                        <button 
+                            type="submit" 
+                            id="contact-btn"
+                            class="btn-primary w-full">
+                            <span>
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                            </span>
+                        </button>
+                        
+                        <!-- Success/Error Messages -->
+                        <div id="success-message" class="hidden text-green-600 text-center py-3 rounded-[var(--border-radius)]" style="background-color: var(--color-success) !important; color: var(--color-bg) !important;">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Message sent successfully! We'll get back to you soon.
+                        </div>
+                        <div id="error-message" class="hidden text-red-600 text-center py-3 rounded-[var(--border-radius)]" style="background-color: var(--color-error) !important; color: var(--color-bg) !important;">
+                            <i class="fas fa-exclamation-circle mr-2"></i>
+                            <span id="error-text">Failed to send message. Please try again.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-bg text-text-primary py-12 border-t border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Logo & Description -->
+                <div class="md:col-span-2">
+                    <div class="font-heading text-2xl font-bold mb-4 text-primary-color">The Golden Hearth</div>
+                    <p class="text-text-secondary mb-6 max-w-md">
+                        Bringing warmth and tradition to your table with every freshly baked treat.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon-btn" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon-btn" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon-btn" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold text-text-primary mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-text-secondary hover:text-primary-color">Home</a></li>
+                        <li><a href="#about" class="text-text-secondary hover:text-primary-color">About Us</a></li>
+                        <li><a href="#menu" class="text-text-secondary hover:text-primary-color">Our Menu</a></li>
+                        <li><a href="#gallery" class="text-text-secondary hover:text-primary-color">Gallery</a></li>
+                        <li><a href="#testimonials" class="text-text-secondary hover:text-primary-color">Testimonials</a></li>
+                        <li><a href="#contact" class="text-text-secondary hover:text-primary-color">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Bakery Hours/Info -->
+                <div>
+                    <h3 class="font-semibold text-text-primary mb-4">Opening Hours</h3>
+                    <ul class="space-y-2 text-text-secondary">
+                        <li>Mon-Fri: 7:00 AM - 6:00 PM</li>
+                        <li>Sat: 8:00 AM - 5:00 PM</li>
+                        <li>Sun: 8:00 AM - 3:00 PM</li>
+                        <li class="mt-4 text-text-muted">Closed on major holidays</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-border mt-12 pt-8 text-center text-text-muted">
+                <p>&copy; 2024 The Golden Hearth. All rights reserved. Crafted with care and tradition.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button 
+        x-show="showBackToTop" 
+        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform scale-90"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-90"
+        class="fixed bottom-8 right-8 btn-primary p-3 rounded-full shadow-lg transition-all z-40" style="color: var(--color-bg) !important;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    
+    <!-- AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Typed JS -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Particles JS (Conditional loading for performance) -->
+    <script>
+        if (window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js';
+            script.onload = () => {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: {
+                            value: 50,
+                            density: {
+                                enable: true,
+                                value_area: 800
+                            }
+                        },
+                        color: {
+                            value: '#eede2b' // Primary color
+                        },
+                        shape: {
+                            type: 'circle',
+                            stroke: {
+                                width: 0,
+                                color: '#eede2b'
+                            }
+                        },
+                        opacity: {
+                            value: 0.3,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 1,
+                                opacity_min: 0.1,
+                                sync: false
+                            }
+                        },
+                        size: {
+                            value: 3,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 2,
+                                size_min: 0.1,
+                                sync: false
+                            }
+                        },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: '#eede2b', // Primary color
+                            opacity: 0.2,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 1,
+                            direction: 'none',
+                            random: false,
+                            straight: false,
+                            out_mode: 'out',
+                            bounce: false
+                        }
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: {
+                            onhover: {
+                                enable: true,
+                                mode: 'repulse'
+                            },
+                            onclick: {
+                                enable: true,
+                                mode: 'push'
+                            },
+                            resize: true
+                        },
+                        modes: {
+                            grab: {
+                                distance: 140,
+                                line_linked: {
+                                    opacity: 1
+                                }
+                            },
+                            bubble: {
+                                distance: 400,
+                                size: 40,
+                                duration: 2,
+                                opacity: 8,
+                                speed: 3
+                            },
+                            repulse: {
+                                distance: 100,
+                                duration: 0.4
+                            },
+                            push: {
+                                particles_nb: 4
+                            },
+                            remove: {
+                                particles_nb: 2
+                            }
+                        }
+                    },
+                    retina_detect: true
+                });
+            };
+            document.body.appendChild(script);
+        }
+    </script>
+
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 50,
+            disable: function() {
+                // Disable AOS animations on mobile and for reduced motion preference
+                return window.innerWidth < 768 || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            }
+        });
+
+        // EmailJS Contact Form Handler - Playground Compatible
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('emailjs-form');
+            const btn = document.getElementById('contact-btn');
+            const successMsg = document.getElementById('success-message');
+            const errorMsg = document.getElementById('error-message');
+            const errorText = document.getElementById('error-text');
+            
+            if (form && btn) {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    // Change button state
+                    btn.disabled = true;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+                    
+                    // Hide previous messages
+                    successMsg.classList.add('hidden');
+                    errorMsg.classList.add('hidden');
+                    
+                    // EmailJS send - EXACT playground method
+                    const serviceID = 'service_d1ikm0r';
+                    const templateID = 'template_y6yjh3h';
+                    
+                    emailjs.sendForm(serviceID, templateID, form)
+                        .then(function(response) {
+                            console.log('EmailJS SUCCESS:', response.status, response.text);
+                            
+                            // Show success message
+                            successMsg.classList.remove('hidden');
+                            
+                            // Reset form
+                            form.reset();
+                            
+                            // Reset button
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Send Message';
+                            
+                            // Hide success message after 5 seconds
+                            setTimeout(() => {
+                                successMsg.classList.add('hidden');
+                            }, 5000);
+                            
+                        }, function(error) {
+                            console.log('EmailJS FAILED:', error);
+                            
+                            // Show error message with details
+                            let errorMessage = 'Failed to send message. Please try again.';
+                            if (error.status === 422) {
+                                errorMessage = 'Invalid template or service configuration.';
+                            } else if (error.status === 412) {
+                                errorMessage = 'Email service authentication error.';
+                            } else if (error.status === 400) {
+                                errorMessage = 'Invalid request. Please check your inputs.';
+                            }
+                            
+                            errorText.textContent = errorMessage;
+                            errorMsg.classList.remove('hidden');
+                            
+                            // Reset button
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Send Message';
+                        });
+                });
+            } else {
+                console.error('EmailJS form elements not found!');
+            }
+        });
+
+        // Smooth scrolling for navigation links and active state
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    if (window.Alpine && window.Alpine.raw(document.body.xdata.mobileMenuOpen)) {
+                        document.body.xdata.mobileMenuOpen = false; // Correctly update Alpine.js state
+                    }
+                }
+            });
+        });
+
+        // Update active navigation link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) { // Offset for sticky nav
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active'); // Remove active class from all
+                
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active'); // Add active class to current section's link
+                }
+            });
+        });
+        
+        // Close mobile menu when clicking outside (using Alpine.js state)
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            // Check if Alpine.js data exists and mobileMenuOpen is true
+            if (mobileMenu && hamburger && window.Alpine && document.body.xdata && document.body.xdata.mobileMenuOpen) {
+                if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                    // Update Alpine.js state to close the menu
+                    document.body.xdata.mobileMenuOpen = false;
+                }
+            }
+        });
+
+        // Prevent zoom on input focus (iOS fix)
+        document.querySelectorAll('input, textarea, select').forEach(element => {
+            element.addEventListener('touchstart', function() {
+                if (element.style.fontSize !== '16px') { // Base font size
+                    element.style.fontSize = '16px';
+                }
+            });
+        });
+
+        // Swiper for Menu/Featured Items
+        const menuSwiper = new Swiper('.portfolio-swiper', { // Using portfolio-swiper class as per template
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+            effect: 'slide',
+            speed: 600,
+            touchRatio: 1,
+            threshold: 5,
+            allowTouchMove: true,
+            preventInteractionOnTransition: false,
+            watchOverflow: true,
+            centerInsufficientSlides: true,
+        });
+
+        // Swiper for Testimonials
+        const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+            },
+            effect: 'slide',
+            speed: 600,
+            touchRatio: 1,
+            threshold: 5,
+            allowTouchMove: true,
+            preventInteractionOnTransition: false,
+            watchOverflow: true,
+            centerInsufficientSlides: true,
+        });
+
+        // Typed.js for Hero Subtitle
+        document.addEventListener('DOMContentLoaded', function() {
+            const typedElement = document.getElementById('typed-text');
+            if (typedElement && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                new Typed('#typed-text', {
+                    strings: [
+                        'Warmth & Tradition',
+                        'Quality & Craft', 
+                        'Joy & Memories',
+                        'Flavor & Passion'
+                    ],
+                    typeSpeed: 80,
+                    backSpeed: 50,
+                    backDelay: 2000,
+                    startDelay: 500,
+                    loop: true,
+                    showCursor: true,
+                    cursorChar: '|',
+                    autoInsertCss: true,
+                });
+            } else if (typedElement) {
+                // If animations are reduced, just show the first string
+                typedElement.textContent = 'Warmth & Tradition';
+            }
+        });
+
+        // GLightbox Initialization
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            cssEfects: {
+                fade: { in: 'fadeIn', out: 'fadeOut' },
+                zoom: { in: 'zoomIn', out: 'zoomOut' }
+            },
+            // Disable lightbox for reduced motion users
+            onOpen: (instance) => {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    instance.destroy(); // Destroy immediately if reduced motion is preferred
+                }
+            }
+        });
+    </script>
+</body>
+</html>
