@@ -1,0 +1,16 @@
+{
+  "name": "website-87-mustafang4858",
+  "version": "1.0.87",
+  "description": "Create a warm and inviting...",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'No build required for static site'",
+    "start": "echo 'Static site ready'"
+  },
+  "keywords": [
+    "static",
+    "website",
+    "html"
+  ],
+  "author": "mustafang4858@gmail.com"
+}
